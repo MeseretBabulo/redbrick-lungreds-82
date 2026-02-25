@@ -61,9 +61,9 @@ options:
 
 substitutions:
   _REGION: "us-central1"
-  _REPO: "report-csv"
-  _IMAGE: "report-csv"
-  _JOB: "report-csv"
+  _REPO: "redbrick-lungreds-82"
+  _IMAGE: "redbrick-lungreds-82"
+  _JOB: "redbrick-lungreds-82"
   _RUNTIME_SA: "1009801181893-compute@developer.gserviceaccount.com"
   _INPUT_BUCKET: "redbrick-lungreds-82-json-input"
   _OUTPUT_BUCKET: "redbrick-lungreds-82-csv-ouput"
