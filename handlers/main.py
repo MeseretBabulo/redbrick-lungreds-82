@@ -188,9 +188,14 @@ def check_data_to_be_flagged_for_no_nodule(data):
     return data
 
 
-def no_nodule(row, task, classification, data):
+def no_nodule(row, task, classification, data, segment_path):
     """Data from No Consensus"""
     rows = []
+    normalized_segments = normalize_segment_entries(segment_path)
+    if normalized_segments:
+        data["Segment Path"] = "Yes"
+    else:
+        data["Segment Path"] = "No path available"
     data["Task ID"] = row["taskId"]
     data["Name"] = row["name"]
     if task.get("updatedBy"):
@@ -380,7 +385,7 @@ def check_if_task_has_consensus(row):
 
         else:
             data = data_values()
-            datas = no_nodule(row, super_truth, classification, data)
+            datas = no_nodule(row, super_truth, classification, data, segment_path)
             rows.extend(datas)
 
     if consensus and len(consensus) == 3:
