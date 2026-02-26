@@ -471,7 +471,7 @@ def iterator_to_json(task_iterator, destination, file):
 def get_api():
     """Retrieves a secret from Secret Manager."""
     client = secretmanager.SecretManagerServiceClient()
-    name = f"projects/306720653557/secrets/api-key/versions/1"
+    name = f"projects/stoked-mode-339213/secrets/api-key/versions/1"
     response = client.access_secret_version(request={"name": name})
     return response.payload.data.decode("UTF-8")
 
@@ -479,7 +479,7 @@ def get_api():
 def get_org():
     """Retrieves a secret from Secret Manager."""
     client = secretmanager.SecretManagerServiceClient()
-    name = f"projects/306720653557/secrets/org/versions/1"
+    name = f"projects/stoked-mode-339213/secrets/org/versions/1"
     response = client.access_secret_version(request={"name": name})
     return response.payload.data.decode("UTF-8")
 
@@ -487,7 +487,7 @@ def get_org():
 def get_110_project():
     """Retrieves a secret from Secret Manager."""
     client = secretmanager.SecretManagerServiceClient()
-    name = f"projects/306720653557/secrets/project_110/versions/1"
+    name = f"projects/stoked-mode-339213/secrets/project_110/versions/1"
     response = client.access_secret_version(request={"name": name})
     return response.payload.data.decode("UTF-8")
 
